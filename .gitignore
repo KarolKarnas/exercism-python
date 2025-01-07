@@ -1,0 +1,5 @@
+.exercism/
+.pytest_cache/
+HELP.md
+HINTS.md
+__pycache__
