@@ -40,7 +40,7 @@ def generate_seats(number):
     for index in range(number):
         if index != 0 and index % 4 == 0:
             row += 1
-            if row ==13:
+            if row == 13:
                 row += 1
         yield f'{row}{letters[index % len(letters)]}'
 
@@ -56,15 +56,10 @@ def assign_seats(passengers):
     """
     result = {}
     seats = generate_seats(len(passengers))
-    pairs = list(zip(passengers, seats))
-    print("Zipped pairs:", pairs)
     for passenger, seat in zip(passengers, seats):
         result[passenger] = seat
     return result
 
-
-passengers = ['Jerimiah', 'Eric', 'Bethany', 'Byte', 'SqueekyBoots', 'Bob']
-assign_seats(passengers)
 
 def generate_codes(seat_numbers, flight_id):
     """Generate codes for a ticket.
@@ -74,5 +69,7 @@ def generate_codes(seat_numbers, flight_id):
     :return: generator - generator that yields 12 character long ticket codes.
 
     """
-
-    pass
+    for seat_number in seat_numbers:
+        base = f'{seat_number}{flight_id}'
+        zero_num = 12 - len(base)
+        yield f'{base}{zero_num * "0"}'
