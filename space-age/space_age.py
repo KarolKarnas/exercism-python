@@ -27,3 +27,19 @@ class SpaceAge:
 
     def on_neptune(self):
         return round(self.seconds / (164.79132  * YEAR), 2)
+    
+x=2121
+y=32332
+
+a = [y, x]
+b = a
+
+m = type(x)
+n = type(y)
+    
+print(id(x))
+print(id(y))
+print(y is x)    
+print(a is b)
+print(id(m))
+print(id(n))
