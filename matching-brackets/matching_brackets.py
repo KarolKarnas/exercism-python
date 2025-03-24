@@ -15,6 +15,3 @@ def is_paired(input_string):
                 return False 
             print(2, stack)
     return len(stack) == 0
-
-
-print(is_paired("([{}({}[])])"))
